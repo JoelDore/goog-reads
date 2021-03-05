@@ -10,7 +10,10 @@ module.exports = {
     },
 
     findById: (req, res) => {
-
+        db.Book
+            .findById(req.params.id)
+            .then(book => res.json(book))
+            .catch(err => res.status(422).json(err))
     },
 
     create: (req, res) => {
