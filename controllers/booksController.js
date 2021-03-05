@@ -24,6 +24,9 @@ module.exports = {
     },
 
     delete: (req, res) => {
-
+        db.Book
+            .findByIdAndDelete(req.params.id)
+            .then(book => res.json(book))
+            .catch(err => res.status(422).json(err))
     }
 }
