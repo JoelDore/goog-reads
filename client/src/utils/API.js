@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import axios from 'axios'
 
 // Gets all books from DB
@@ -12,9 +13,14 @@ const saveBook = (book) => {
 const deleteBook = (id) => {
     axios.get(`/api/books/${id}`)
 }
+// Gets books from Google Books by search query
+const getGoogleBooks = (query, startIndex) => {
+    axios.get(`/api/googlebooks?q=${query}&startIndex=${startIndex}`)
+}
 
-export {
+export default {
     getBooks,
     saveBook,
-    deleteBook
+    deleteBook,
+    getGoogleBooks
 }
