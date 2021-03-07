@@ -6,7 +6,6 @@ export default function Search() {
 
     const [books, setBooks] = useState([])
     const [currIndex, setCurrIndex] = useState(0)
-    // const [query, setQuery] = useState([])
 
     const searchBooks = async () => {
         const query = inputRef.current.value
