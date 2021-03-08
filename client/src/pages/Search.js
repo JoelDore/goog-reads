@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import Section from '../components/Section'
 import SearchBar from '../components/SearchBar'
+import Pagination from '../components/Pagination'
+import PaginationBtn from '../components/PaginationBtn'
 import API from '../utils/API'
 
 export default function Search() {
@@ -52,9 +54,15 @@ export default function Search() {
                         <p key={book.etag}>{currIndex + idx + 1}: {book.volumeInfo.title}</p>
                     )) : <h3 className="text-muted">No results found</h3>
                 }
+                <Pagination>
+                    {currIndex !== 0 &&
+                        <PaginationBtn direction="Prev" paginate={prevPage} />
+                    }
+                    {books.length !== 0 &&
+                        <PaginationBtn direction="Next" paginate={nextPage} />
+                    }
+                </Pagination>
             </Section>
-            {currIndex !== 0 && <button type="button" onClick={prevPage}>Prev Page</button>}
-            {books.length !== 0 && <button type="button" onClick={nextPage}>Next Page</button>}
         </div>
     )
 }
