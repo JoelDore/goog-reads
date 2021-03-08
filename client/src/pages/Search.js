@@ -4,6 +4,7 @@ import SearchBar from '../components/SearchBar'
 import Pagination from '../components/Pagination'
 import PaginationBtn from '../components/PaginationBtn'
 import API from '../utils/API'
+import BookCard from '../components/BookCard'
 
 export default function Search() {
     const inputRef = useRef()
@@ -51,7 +52,7 @@ export default function Search() {
             <Section title="Results">
                 {
                     books.length ? books.map((book, idx) => (
-                        <p key={book.etag}>{currIndex + idx + 1}: {book.volumeInfo.title}</p>
+                        <BookCard key={book.etag} bookData={book.volumeInfo} />
                     )) : <h3 className="text-muted">No results found</h3>
                 }
                 <Pagination>
