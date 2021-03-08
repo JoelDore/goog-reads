@@ -12,10 +12,10 @@ export default function Nav() {
     return (
         <Container fluid className="bg-googreads">
             <BootNavbar expand="md" variant="dark">
-                <BootNavbar.Brand>googreads</BootNavbar.Brand>
+                <BootNavbar.Brand>goog<b>reads</b></BootNavbar.Brand>
                 <BootNavbar.Toggle aria-controls="main-nav" className="border-0" />
                 <BootNavbar.Collapse id="main-nav">
-                    <BootNav className="ms-auto">
+                    <BootNav className="me-auto ms-3">
                         <Link
                             to="/search"
                             className={`${['/', '/search'].includes(location.pathname)
