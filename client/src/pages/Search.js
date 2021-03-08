@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import SearchBar from '../components/SearchBar'
 import API from '../utils/API'
 
 export default function Search() {
@@ -13,7 +14,8 @@ export default function Search() {
         setBooks(results.data.items)
     }
 
-    const handleSearch = async () => {
+    const handleSearch = async (e) => {
+        e.preventDefault()
         // Get query from input & validate
         const query = inputRef.current.value
         if (!query) return
@@ -40,9 +42,7 @@ export default function Search() {
 
     return (
         <div>
-            <h1>Search</h1>
-            <input type="text" name="query" ref={inputRef} />
-            <button type="button" onClick={handleSearch}>Search books</button>
+            <SearchBar handleSearch={handleSearch} inputRef={inputRef} />
             {
                 books.length ? books.map((book, idx) => (
                     <p key={book.id}>{currIndex + idx + 1}: {book.volumeInfo.title}</p>
