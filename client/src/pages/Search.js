@@ -49,7 +49,7 @@ export default function Search() {
                 )) : <h3>No results found</h3>
             }
             {currIndex !== 0 && <button type="button" onClick={prevPage}>Prev Page</button>}
-            <button type="button" onClick={nextPage}>Next Page</button>
+            {books.length !== 0 && <button type="button" onClick={nextPage}>Next Page</button>}
         </div>
     )
 }
