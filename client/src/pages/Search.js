@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import Section from '../components/Section'
 import SearchBar from '../components/SearchBar'
 import API from '../utils/API'
 
@@ -42,12 +43,16 @@ export default function Search() {
 
     return (
         <div>
-            <SearchBar handleSearch={handleSearch} inputRef={inputRef} />
-            {
-                books.length ? books.map((book, idx) => (
-                    <p key={book.etag}>{currIndex + idx + 1}: {book.volumeInfo.title}</p>
-                )) : <h3>No results found</h3>
-            }
+            <Section title="Book Search">
+                <SearchBar handleSearch={handleSearch} inputRef={inputRef} />
+            </Section>
+            <Section title="Results">
+                {
+                    books.length ? books.map((book, idx) => (
+                        <p key={book.etag}>{currIndex + idx + 1}: {book.volumeInfo.title}</p>
+                    )) : <h3 className="text-muted">No results found</h3>
+                }
+            </Section>
             {currIndex !== 0 && <button type="button" onClick={prevPage}>Prev Page</button>}
             {books.length !== 0 && <button type="button" onClick={nextPage}>Next Page</button>}
         </div>
