@@ -18,7 +18,10 @@ module.exports = {
 
     create: (req, res) => {
         db.Book
-            .create(req.body)
+            .findOneAndUpdate({ link: req.body.link }, req.body, {
+                new: true,
+                upsert: true // Make this update into an upsert
+            })
             .then(book => res.json(book))
             .catch(err => res.status(422).json(err))
     },
