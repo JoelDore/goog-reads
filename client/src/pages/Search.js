@@ -45,7 +45,7 @@ export default function Search() {
             <SearchBar handleSearch={handleSearch} inputRef={inputRef} />
             {
                 books.length ? books.map((book, idx) => (
-                    <p key={book.id}>{currIndex + idx + 1}: {book.volumeInfo.title}</p>
+                    <p key={book.etag}>{currIndex + idx + 1}: {book.volumeInfo.title}</p>
                 )) : <h3>No results found</h3>
             }
             {currIndex !== 0 && <button type="button" onClick={prevPage}>Prev Page</button>}
