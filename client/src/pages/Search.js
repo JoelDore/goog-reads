@@ -61,8 +61,12 @@ export default function Search() {
             </Section>
             <Section title="Results">
                 {
-                    books.length ? books.map((book, idx) => (
-                        <BookCard key={book.etag} bookData={book.volumeInfo} handleSave={handleSave} />
+                    books.length ? books.map((book) => (
+                        <BookCard
+                            key={book.etag}
+                            bookData={book.volumeInfo}
+                            handleSave={handleSave}
+                        />
                     )) : <h3 className="text-muted">No results found</h3>
                 }
                 <Pagination>

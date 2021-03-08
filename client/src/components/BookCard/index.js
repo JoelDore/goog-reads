@@ -23,12 +23,18 @@ export default function BookCard({ bookData, handleSave, handleDelete }) {
                         </Card.Subtitle>
                     </Col>
                     <Col sm={4} className="text-sm-right">
-                        <a href={bookData.infoLink} target="_blank" rel="noreferrer">
+
+                        {/* accomodate database vs. Google Books structures */}
+                        <a href={bookData.infoLink || bookData.link} target="_blank" rel="noreferrer">
                             <Button size="sm" className="bg-googreads rounded-0 mx-1">View</Button>
                         </a>
                         {
                             handleSave &&
                             <Button size="sm" className="bg-googreads rounded-0 mx-1" onClick={() => handleSave(bookData)}>Save</Button>
+                        }
+                        {
+                            handleDelete &&
+                            <Button size="sm" className="bg-googreads rounded-0 mx-1" onClick={() => handleDelete(bookData._id)}>Delete</Button>
                         }
                     </Col>
                 </Row>
@@ -36,9 +42,9 @@ export default function BookCard({ bookData, handleSave, handleDelete }) {
             <Card.Body>
                 <Row>
                     <Col>
-                        {bookData.imageLinks ? (
+                        {bookData.imageLinks || bookData.image ? (
                             <Image
-                                src={bookData.imageLinks.thumbnail}
+                                src={bookData?.imageLinks?.thumbnail || bookData.image}
                                 alt={`Book cover: ${bookData.title}`}
                                 className="mb-3 mb-sm-0"
                             />
