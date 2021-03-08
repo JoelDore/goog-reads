@@ -11,7 +11,7 @@ const saveBook = (book) => {
 }
 // Deletes a book by ID
 const deleteBook = (id) => {
-    return axios.get(`/api/books/${id}`)
+    return axios.delete(`/api/books/${id}`)
 }
 // Gets books from Google Books by search query
 const getGoogleBooks = (query, startIndex) => {
