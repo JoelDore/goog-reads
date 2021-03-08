@@ -18,6 +18,16 @@ export default function Search() {
         setBooks(results.data.items)
     }
 
+    const handleSave = async (bookData) => {
+        await API.saveBook({
+            title: bookData.title,
+            authors: bookData.authors,
+            description: bookData.description,
+            image: bookData.imageLinks.thumbnail,
+            link: bookData.infoLink
+        })
+    }
+
     const handleSearch = async (e) => {
         e.preventDefault()
         // Get query from input & validate
@@ -52,7 +62,7 @@ export default function Search() {
             <Section title="Results">
                 {
                     books.length ? books.map((book, idx) => (
-                        <BookCard key={book.etag} bookData={book.volumeInfo} />
+                        <BookCard key={book.etag} bookData={book.volumeInfo} handleSave={handleSave} />
                     )) : <h3 className="text-muted">No results found</h3>
                 }
                 <Pagination>

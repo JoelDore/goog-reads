@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
 import Col from 'react-bootstrap/esm/Col'
 
-export default function BookCard({ bookData }) {
+export default function BookCard({ bookData, handleSave, handleDelete }) {
     // Compute maximum characters for book description
     const maxChars = window.innerWidth < 768 ? 300 : 600
 
@@ -23,8 +23,13 @@ export default function BookCard({ bookData }) {
                         </Card.Subtitle>
                     </Col>
                     <Col sm={4} className="text-sm-right">
-                        <Button size="sm" className="bg-googreads rounded-0 mx-1">View</Button>
-                        <Button size="sm" className="bg-googreads rounded-0 mx-1">Delete</Button>
+                        <a href={bookData.infoLink} target="_blank" rel="noreferrer">
+                            <Button size="sm" className="bg-googreads rounded-0 mx-1">View</Button>
+                        </a>
+                        {
+                            handleSave &&
+                            <Button size="sm" className="bg-googreads rounded-0 mx-1" onClick={() => handleSave(bookData)}>Save</Button>
+                        }
                     </Col>
                 </Row>
             </Card.Header>
