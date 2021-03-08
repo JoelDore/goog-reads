@@ -15,7 +15,7 @@ export default function Nav() {
                 <BootNavbar.Brand>goog<b>reads</b></BootNavbar.Brand>
                 <BootNavbar.Toggle aria-controls="main-nav" className="border-0" />
                 <BootNavbar.Collapse id="main-nav">
-                    <BootNav className="me-auto ms-3">
+                    <BootNav className="mr-auto ml-3">
                         <Link
                             to="/search"
                             className={`${['/', '/search'].includes(location.pathname)
