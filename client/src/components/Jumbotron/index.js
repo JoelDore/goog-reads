@@ -1,5 +1,5 @@
 import React from 'react'
-import { Jumbotron as BootJumbotron } from 'react-bootstrap'
+import BootJumbotron from 'react-bootstrap/Jumbotron'
 
 export default function Jumbotron() {
     return (
