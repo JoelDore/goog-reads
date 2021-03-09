@@ -5,10 +5,12 @@ import Pagination from '../components/Pagination'
 import PaginationBtn from '../components/PaginationBtn'
 import API from '../utils/API'
 import BookCard from '../components/BookCard'
+import Alert from 'react-bootstrap/Alert'
 
 export default function Search() {
     const inputRef = useRef()
 
+    const [showAlert, setShowAlert] = useState(false);
     const [books, setBooks] = useState([])
     const [currIndex, setCurrIndex] = useState(0)
     const [currQuery, setCurrQuery] = useState("")
@@ -26,6 +28,10 @@ export default function Search() {
             image: bookData.imageLinks.thumbnail,
             link: bookData.infoLink
         })
+        setShowAlert(true)
+        setTimeout(() => {
+            setShowAlert(false)
+        }, 2500);
     }
 
     const handleSearch = async (e) => {
@@ -68,6 +74,15 @@ export default function Search() {
                             handleSave={handleSave}
                         />
                     )) : <h3 className="text-muted">No results found</h3>
+                }
+                {
+                    showAlert &&
+                    <Alert
+                        className="fixed-bottom w-25 ml-auto mr-3 rounded-0 text-center"
+                        variant="success"
+                    >
+                        <strong>Saved!</strong>
+                    </Alert>
                 }
                 <Pagination>
                     {currIndex !== 0 &&
