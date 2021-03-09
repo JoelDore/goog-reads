@@ -20,7 +20,8 @@ module.exports = {
         db.Book
             .findOneAndUpdate({ link: req.body.link }, req.body, {
                 new: true,
-                upsert: true // Make this update into an upsert
+                upsert: true, // Make this update into an upsert
+                useFindAndModify: false
             })
             .then(book => res.json(book))
             .catch(err => res.status(422).json(err))
