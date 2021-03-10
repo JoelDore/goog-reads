@@ -26,7 +26,10 @@
 * [Questions](#Questions)
 
 ## Features
-- 
+- Search for books using Google Books API.
+- Paginated search results for easier search experience & faster page load. 
+- Save books for later reference to review or purchase on Google Books.
+- Delete saved books when no longer needed
 
 ## Installation
 1. Download project by clicking ![Code button][Code] at the top of this repository, and navigate to project root directory in terminal.
