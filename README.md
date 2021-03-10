@@ -80,9 +80,7 @@ Currently deployed with [Heroku](https://goog-reads.herokuapp.com/)
 3. If you do not see the book you want, you may view more results by selecting `Next/Prev Page` at the bottom of the screen, or try a different search query.
 4. View books you have saved for later on the `Saved` page, where you have the option to `View` on Google Books or `Delete` from your saved books.
 
-<img src="./client/public/assets/images/screenshot-mobile-search.png" alt="Mobile screenshot" title="Mobile screenshot" width="32%">
-<img src="./client/public/assets/images/screenshot-mobile-pagination.png" alt="Mobile screenshot" title="Mobile screenshot" width="32%">
-<img src="./client/public/assets/images/screenshot-mobile-saved.png" alt="Mobile screenshot" title="Mobile screenshot" width="32%">
+<img src="./client/public/assets/images/screenshot-mobile-search.png" alt="Mobile screenshot" title="Mobile screenshot" width="32%"> <img src="./client/public/assets/images/screenshot-mobile-pagination.png" alt="Mobile screenshot" title="Mobile screenshot" width="32%"> <img src="./client/public/assets/images/screenshot-mobile-saved.png" alt="Mobile screenshot" title="Mobile screenshot" width="32%">
 
 ## Technologies Used
 - [MongoDB](https://cloud.mongodb.com/)/[Mongoose](https://mongoosejs.com/)
