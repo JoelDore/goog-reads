@@ -1,6 +1,7 @@
 <div align="center">
 
-# *goog*reads
+# <img src="./client/public/apple-touch-icon.png" alt="logo" width=32 /> *goog*reads
+
 <div>
 <img src='https://img.shields.io/github/license/joeldore/goog-reads'>  
 <img src='https://img.shields.io/github/repo-size/joeldore/goog-reads'>  
