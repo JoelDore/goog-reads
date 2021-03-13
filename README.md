@@ -9,7 +9,7 @@
 <img src='https://img.shields.io/github/last-commit/joeldore/goog-reads'>
 </div>
 
-### React-based app allowing users to search for and save books to review or purchase later
+### MERN stack app allowing users to search for and save books to review or purchase later
 
 ![Desktop screenshot](./client/public/assets/images/screenshot-desktop.png "Desktop screenshot")
 
