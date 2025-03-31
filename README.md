@@ -77,8 +77,6 @@
     You don’t have to ever use `eject`. The curated feature set is suitable for     small and middle deployments, and you shouldn’t feel obligated to use this  feature. However we understand that this tool wouldn’t be useful if you  couldn’t customize it when you are ready for it.
 
 ## Usage
-Currently deployed with [Heroku](https://goog-reads.herokuapp.com/)
-
 1. Enter a book or author you want to search for and tap/click `Search Books`.
 2. Select `View` on any result to review/purchase in Google Books, or `Save` to reference later.
 3. If you do not see the book you want, you may view more results by selecting `Next/Prev Page` at the bottom of the screen, or try a different search query.
